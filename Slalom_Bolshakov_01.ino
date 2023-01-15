@@ -173,17 +173,17 @@ void measureDistance() {
 // функция объезда препятствия по правилам слалома: первое справа, второе слева, третье справа и т.д.
 void obyezd() {
   if (slalom == 1) {
-    obyezd_right();
+    obyezdRight();
     slalom = 2;   // следующее препятствие объезжать слева
   }
   else {
-    obyezd_left();
+    obyezdLeft();
     slalom = 1;   // следующее препятствие объезжать справа
   }
 }
 
 // объезд препятствия справа. Все delay и некоторые скорости необходимо подстроить экспериментально
-void obyezd_right() {
+void obyezdRight() {
   // развернуться на месте направо
   analogWrite (LF, speed_left);
   analogWrite (LB, 0);
@@ -207,7 +207,7 @@ void obyezd_right() {
 }
 
 // объезд препятствия справа. Все delay и некоторые скорости необходимо подстроить экспериментально
-void obyezd_left() {
+void obyezdLeft() {
   // развернуться на месте налево
   analogWrite (LF, 0);
   analogWrite (LB, speed_left);
